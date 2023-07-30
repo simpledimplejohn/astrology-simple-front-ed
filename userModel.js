@@ -1,5 +1,6 @@
-// stores the user data
-class User {
+// userModel.js
+
+export class User {
     constructor(name, birthdate, birthtime, latitude, longitude) {
         this.name = name;
         this.birthdate = birthdate;
@@ -9,4 +10,3 @@ class User {
     }
 }
 
-module.exports = User;

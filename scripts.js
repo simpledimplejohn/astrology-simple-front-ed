@@ -1,9 +1,10 @@
-const User = require('./userModel')
+// scripts.js
 
+import { User } from './userModel.js'
 const form = document.getElementById('astrologyForm');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-
+    console.log('potato')
     const nameI = document.getElementById('name');
 
     if(nameI) {
