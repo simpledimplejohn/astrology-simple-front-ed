@@ -7,5 +7,11 @@ Using npm
 Use shift alt F to auto format vs code
 
 This added to the package.json:
-  "scripts": {
-    "start":"node index.js"
+`  "scripts": {`
+    `"start":"node index.js"`
+
+Using github
+- `git push origin dev`
+- `git checkout main`
+- `git pull origin main`
+- `git merge dev`
