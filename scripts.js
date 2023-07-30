@@ -4,19 +4,30 @@ import { User } from './userModel.js'
 const form = document.getElementById('astrologyForm');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log('potato')
+    // get the elements from the form
     const nameI = document.getElementById('name');
-
-    if(nameI) {
-        const data = {
-            name: nameI.value
-        }
-    
-    const user = new User(data.name)
-    console.log(user)
-    } else {
-        console.error('potato');
+    const birthdateI = document.getElementById('birthdate');
+    const birthtimeI = document.getElementById('birthtime');
+    const latitudeI = document.getElementById('latitude');
+    const longitudeI = document.getElementById('longitude');
+    // add the elements to an object
+    const data = {
+        name: nameI.value,
+        birthdate: birthdateI.value,
+        birthtime: birthtimeI.value,
+        latitude: latitudeI.value,
+        longitude: latitudeI
     }
+    // create a new object from the model and add the elements to that model
+    const user = new User(
+        data.name,
+        data.birthdate,
+        data.birthtime,
+        data.latitude,
+        data.longitude
+        )
+    console.log(user)
+
 
 })
 
