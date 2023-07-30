@@ -1,3 +1,28 @@
+const User = require('./userModel')
+
+const form = document.getElementById('astrologyForm');
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const nameI = document.getElementById('name');
+
+    if(nameI) {
+        const data = {
+            name: nameI.value
+        }
+    
+    const user = new User(data.name)
+    console.log(user)
+    } else {
+        console.error('potato');
+    }
+
+})
+
+
+
+/*
+// initial test to get the data
 document.getElementById("astrologyForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -15,3 +40,4 @@ document.getElementById("astrologyForm").addEventListener("submit", function (ev
     console.log("Latitude:", latitude);
     console.log("Longitude:", longitude);
 });
+*/
