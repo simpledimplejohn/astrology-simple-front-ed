@@ -11,7 +11,10 @@ This added to the package.json:
     `"start":"node index.js"`
 
 Using github
+Working from dev and merging to main
 - `git push origin dev`
 - `git checkout main`
 - `git pull origin main`
 - `git merge dev`
+Accidentally working in main and having to merge to dev:
+- 
