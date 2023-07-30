@@ -1,8 +1,8 @@
 // scripts.js
-
 import { User } from './userModel.js'
+
 const form = document.getElementById('astrologyForm');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
     // get the elements from the form
     const nameI = document.getElementById('name');
@@ -18,6 +18,8 @@ form.addEventListener('submit', (event) => {
         latitude: latitudeI.value,
         longitude: latitudeI
     }
+    // Convert birthdate string to Date object
+    data.birthdate = new Date(data.birthdate);
     // create a new object from the model and add the elements to that model
     const user = new User(
         data.name,
@@ -25,15 +27,46 @@ form.addEventListener('submit', (event) => {
         data.birthtime,
         data.latitude,
         data.longitude
-        )
+    )
     console.log(user)
 
-
-})
-
-
-
+    try {
+        const response = await fetch('http://json.freeastrologyapi.com/planets', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer xxxxxxxx`,
+            },
+            body: JSON.stringify({
+                year: user.birthdate.getFullYear(), //parse to get the year
+                month: user.birthdate.getMonth() + 1, // parse for month
+                date: user.birthdate.getDate(), //parse to get the date
+                hours: parseInt(user.birthtime.slice(0, 2)), // slice?
+                minutes: parseInt(user.birthtime.slice(6, 8)),
+                latitude: parseFloat(user.latitude),
+                longitude: parseFloat(user.longitude), // turns text into float
+                timezone: -8, // set this with the offset
+                settings: {
+                    observation_point: 'topocentric',
+                    ayanamsha: 'lahiri',
+                },
+            }),
+        });
+        if (!response.ok) {
+            throw new Error('Network Potato not okay');
+        }
+        const result = await response.json();
+        console.log(result);
+        // now you can display the result to the page
+    } catch (error) {
+        console.error('potato error fetching data', error);
+    }
+});
 /*
+
+
+
+
 // initial test to get the data
 document.getElementById("astrologyForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
@@ -51,5 +84,6 @@ document.getElementById("astrologyForm").addEventListener("submit", function (ev
     console.log("Birth Time:", birthtime);
     console.log("Latitude:", latitude);
     console.log("Longitude:", longitude);
+    console.log("year:", new Date(birthdate).getFullYear());
 });
 */

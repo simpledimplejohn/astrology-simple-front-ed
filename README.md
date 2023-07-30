@@ -29,4 +29,5 @@ This repo is for re-learning basic javascript so I can move on to React and Angu
 - Models need to use `export class User {}` to make the object accessable
 - Scripts need to import this object using `import { User } from './userModel.js'` to make this accessable 
 - HTML needs to use `<script type="module" src="scripts.js"></script>` to make this accessable 
+- This is different when using webpack 
 2. Send the user to the API and get results back using fetch
