@@ -5,10 +5,15 @@ this is a simple build of the front end API for astrology that will not use a fr
 Using npm 
 `npm init -y` for setup
 Use shift alt F to auto format vs code
-
 This added to the package.json:
 `  "scripts": {`
     `"start":"node index.js"`
+Express:
+`npm install express`
+Env dotenv:
+`npm install dotenv`
+Webpack
+`npm install webpack webpack-cli --save-dev`
 
 ## Using github
 Working from dev and merging to main
@@ -24,6 +29,12 @@ Accidentally working in main and having to merge to dev:
 
 ## Steps to complete for learning
 This repo is for re-learning basic javascript so I can move on to React and Angular once I am more comfortable with the basic systax and setup.
+
+### Node JS Express Build with Webpack
+1. Initial setup install and folder trees
+
+
+
 ### Vanila JS
 1. HTML and js working to get user data from a form and add it to the model.
 - Models need to use `export class User {}` to make the object accessable
@@ -31,3 +42,5 @@ This repo is for re-learning basic javascript so I can move on to React and Angu
 - HTML needs to use `<script type="module" src="scripts.js"></script>` to make this accessable 
 - This is different when using webpack 
 2. Send the user to the API and get results back using fetch
+- astrology api throws a cors error, vanila JS will not work now moving to Express and Webpack
+3. Rebuild with express and webpack
