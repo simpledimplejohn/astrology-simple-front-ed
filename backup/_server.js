@@ -1,10 +1,10 @@
 // server.js
-import { User } from './userModel.js'
-const http = require('http');
-const url = require('url');
-const fetch = require('node-fetch');
+// import { User } from './userModel.js'
+// const http = require('http');
+// const url = require('url');
+// const fetch = require('node-fetch');
 
-const API_KEY = 'aUDMJHvbSIVusNoJ6uDzamHSz0CmwHV6tAX6T2S8'; // Replace this with your actual API key
+const API_KEY = ''; // Replace this with your actual API key
 
 const server = http.createServer((req, res) => {
   const { pathname } = url.parse(req.url);

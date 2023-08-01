@@ -1,5 +1,5 @@
 // scripts.js
-import { User } from './userModel.js'
+// import { User } from './userModel.js'
 
 const form = document.getElementById('astrologyForm');
 form.addEventListener('submit', async (event) => {
@@ -35,7 +35,7 @@ form.addEventListener('submit', async (event) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ',  //process.env.API_KEY
+                'Authorization': 'aUDMJHvbSIVusNoJ6uDzamHSz0CmwHV6tAX6T2S8',  //process.env.API_KEY
             },
             body: JSON.stringify({
                 year: user.birthdate.getFullYear(), //parse to get the year
