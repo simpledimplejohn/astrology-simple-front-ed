@@ -14,7 +14,14 @@ Env dotenv:
 `npm install dotenv`
 Webpack
 `npm install webpack webpack-cli --save-dev`
-
+`npm install html-webpack-plugin --save-dev`
+`npm install webpack-dev-server --save-dev`
+`npm install path-browserify os-browserify crypto-browserify --save-dev`
+`npm install stream-browserify`
+Launching:
+`npm run build`  // do this everytime you make changes
+`npm run dev`
+`npm start`
 ## Using github
 Working from dev and merging to main
 - `git push origin dev`
