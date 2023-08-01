@@ -35,7 +35,7 @@ form.addEventListener('submit', async (event) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer xxxxxxxx`,
+                'Authorization': 'Bearer ',  //process.env.API_KEY
             },
             body: JSON.stringify({
                 year: user.birthdate.getFullYear(), //parse to get the year
@@ -63,10 +63,6 @@ form.addEventListener('submit', async (event) => {
     }
 });
 /*
-
-
-
-
 // initial test to get the data
 document.getElementById("astrologyForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
