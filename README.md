@@ -12,6 +12,8 @@ Express:
 `npm install express`
 Env dotenv:
 `npm install dotenv`
+Fetch
+`npm install node-fetch`
 Webpack
 `npm install webpack webpack-cli --save-dev`
 `npm install html-webpack-plugin --save-dev`
