@@ -21,6 +21,14 @@ module.exports = { // <-- Corrected from module.export to module.exports
             template: './public/index.html',
         }),
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 3000,
+        proxy: {
+            '/api': 'http://localhost:3000', // redirects api request to Express server 
+        }
+    },
     resolve: {
         fallback: {
             path: require.resolve('path-browserify'),

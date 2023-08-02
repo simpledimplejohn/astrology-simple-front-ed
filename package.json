@@ -4,7 +4,7 @@
   "description": "this is a simple build of the front end API for astrology that will not use a framework",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "node server.js",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production"
   },
