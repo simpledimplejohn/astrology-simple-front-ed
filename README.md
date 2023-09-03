@@ -1,5 +1,18 @@
 # Simple Front End API
 this is a simple build of the front end API for astrology that will not use a framework
+It is designed without a back end.  It accesses the Astrology API directly with the form submission and then returns the information to the webpage.
+Using: 
+- Node js
+- Fetch
+- Express (not used but installed)
+- webpack
+
+Issues, 
+- currentlly not working
+- loads wepage with `npm start`
+- will not hit api, gives:
+index.js:51 Error ReferenceError: process is not defined
+    at HTMLFormElement.eval (index.js:37:44)
 
 ## Build
 Using npm 
